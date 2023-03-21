@@ -2,7 +2,6 @@ import { React, useState } from 'react'
 import { getItem, setItem } from '../services/LocalStorageFuncs'
 import { BsFillCartDashFill } from 'react-icons/bs';
 import { SmartphoneList, Title } from './Styles';
-import { Link } from 'react-router-dom';
 import { SmartphoneItem, Body } from './Styles';
 import { Header } from '../components/Header/Header';
 
@@ -21,23 +20,27 @@ export const Cart = () => {
         <Body>
             <Header />
             <Title>Cart</Title>
+        { data.length !== 0 ?
+            <>
             <h3>{`SubTotal: R$ ${subTotal}`}</h3>
-        <SmartphoneList>
-            {
-                data.map((e)=>{
-                    return(
-                        <SmartphoneItem key={e.id}>
-                            <h4>{e.title}</h4>
-                            <img src={e.thumbnail} alt={e.title} />
-                            <h4>{`R$ ${e.price}`}</h4>
-                            <button onClick={() => removeItem(e)}>
-                                <BsFillCartDashFill/>
-                            </button>
-                        </SmartphoneItem>
-                    )
-                })
-            }
-        </SmartphoneList>
+            <SmartphoneList>
+                {
+                    data.map((e)=>{
+                        return(
+                            <SmartphoneItem key={e.id}>
+                                <h4>{e.title}</h4>
+                                <img src={e.thumbnail} alt={e.title} />
+                                <h4>{`R$ ${e.price}`}</h4>
+                                <button onClick={() => removeItem(e)}>
+                                    <BsFillCartDashFill/>
+                                </button>
+                            </SmartphoneItem>
+                        )
+                    })
+                }
+            </SmartphoneList></>:
+            <h3>Você não adicionou nada ao seu carrinho</h3>
+        }    
         </Body>
     )
 }

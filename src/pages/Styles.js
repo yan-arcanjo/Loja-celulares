@@ -57,3 +57,53 @@ export const SmartphoneList = styled.div`
     row-gap: 3rem;
     padding: 0 8rem;
 `
+
+export const LoginSection = styled.div`
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`
+
+export const LoginInputs = styled.div`
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 500px;
+        height: 500px;
+        background: crimson;
+        font-size: 0.7rem;
+        border-radius: 10px;
+        color: white;
+        font-weight: bold;
+        padding: 2rem;
+
+        h1{
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+`
+export const Input = styled.input`
+    margin: 0.5rem 0;
+    border: none;
+    width: 15rem;
+    height: 2.5rem;
+    padding: 1rem;
+    color: white;
+    background-color: rgba(10,23,55,0.5);
+`
+
+export const Button = styled.button`
+    background-color: blueviolet;
+    width: 15rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+`

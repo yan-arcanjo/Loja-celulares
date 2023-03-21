@@ -7,5 +7,8 @@ export const GlobalStyle = createGlobalStyle`
         font-family: Helvetica, Sans-serif;
         box-sizing: border-box;
     }
-    
+    body {
+        width: 100vw;
+        height: 100vh;
+    }
 `
